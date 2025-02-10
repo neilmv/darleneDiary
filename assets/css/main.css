@@ -4621,7 +4621,7 @@ body.is-mobile .banner > article {
   } */
 }
 
-#audioButton {
+/* #audioButton {
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -4635,7 +4635,7 @@ body.is-mobile .banner > article {
   align-items: center;
   opacity: 0.9;
   transition: all 0.3s ease;
-}
+} */
 
 /* Icon */
 #audioButton i {
@@ -4658,4 +4658,40 @@ body.is-mobile .banner > article {
 /* Show text when hovering */
 #audioButton:hover span {
   display: inline;
+}
+
+/* Loading Overlay */
+#loadingOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #f5dfea, #f55eae, #800080, #8a2be2);
+  background-size: 400% 400%;
+  animation: gradientAnimation 4s ease infinite;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  z-index: 9999;
+}
+
+/* Animation for moving gradient */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Fade in and out effect for the loading overlay */
+#loadingOverlay {
+  transition: opacity 1s ease;
 }

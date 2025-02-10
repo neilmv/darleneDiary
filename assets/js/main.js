@@ -302,14 +302,23 @@ setActivePanel();
 
 document.getElementById("audioButton").addEventListener("click", function () {
   var audio = document.getElementById("bgAudio");
+  var content = document.getElementById("content");
+  var overlay = document.getElementById("loadingOverlay");
+
   audio.play().catch(function (error) {
     console.log("Audio play failed: ", error);
   });
 
-  this.style.transition = "opacity 0.5s ease";
-  this.style.opacity = "0";
+  audio.onplaying = function () {
+    overlay.style.transition = "opacity 1s ease";
+    overlay.style.opacity = "0";
 
-  setTimeout(function () {
-    document.getElementById("audioButton").style.display = "none";
-  }, 500);
+    setTimeout(function () {
+      overlay.style.display = "none";
+      content.style.display = "block";
+    }, 1000);
+  };
+
+  // Hide the button after the click
+  this.style.display = "none";
 });
