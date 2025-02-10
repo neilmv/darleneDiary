@@ -4644,12 +4644,6 @@ body.is-mobile .banner > article {
 }
 
 /* Expanding effect on hover */
-#audioButton:hover {
-  width: 200px;
-  opacity: 1;
-  background-color: #f39c42;
-  transition: width 0.3s ease, opacity 0.3s ease;
-}
 
 #audioButton span {
   display: none;
