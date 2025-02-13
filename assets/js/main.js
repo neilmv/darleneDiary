@@ -300,7 +300,7 @@ setInterval(setActivePanel, 1300);
 
 setActivePanel();
 
-document.getElementById("audioButton").addEventListener("click", function () {
+document.addEventListener("click", function () {
   var audio = document.getElementById("bgAudio");
   var content = document.getElementById("content");
   var overlay = document.getElementById("loadingOverlay");
@@ -318,6 +318,8 @@ document.getElementById("audioButton").addEventListener("click", function () {
       content.style.display = "block";
     }, 1000);
   };
+  
+  document.removeEventListener("click", arguments.callee);
 
   // Hide the button after the click
   this.style.display = "none";
